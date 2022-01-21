@@ -1,5 +1,6 @@
 import { Controller, Logger } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
+import { of } from 'rxjs';
 
 interface Customer {
   id: number;
@@ -21,6 +22,7 @@ export class AppController {
       data && data.customerId
         ? customerList.filter(cust => cust.id === parseInt(data.customerId, 10))
         : customerList;
+    // return of({ customers });
     return { customers };
   }
 }

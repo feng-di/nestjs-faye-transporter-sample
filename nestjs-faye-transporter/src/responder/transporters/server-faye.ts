@@ -12,6 +12,7 @@ export class ServerFaye extends Server implements CustomTransportStrategy {
     // defaults unless overridden via `options`
     this.initializeSerializer(options);
     this.initializeDeserializer(options);
+    console.log('\n----faye server initialized-----\n\n', options);
   }
 
   /**
